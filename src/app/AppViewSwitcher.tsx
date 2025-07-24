@@ -2,9 +2,11 @@ import Switcher from '@/components/switcher/Switcher';
 import SwitcherItem from '@/components/switcher/SwitcherItem';
 import IconFull from '@/components/icons/IconFull';
 import IconGrid from '@/components/icons/IconGrid';
+import IconContact from '@/components/icons/IconContact';
 import {
   PATH_FULL_INFERRED,
   PATH_GRID_INFERRED,
+  PATH_CONTACT,
 } from '@/app/path';
 import IconSearch from '../components/icons/IconSearch';
 import { useAppState } from '@/app/AppState';
@@ -27,7 +29,7 @@ import { motion } from 'framer-motion';
 import SortMenu from '@/photo/sort/SortMenu';
 import { SWR_KEYS } from '@/swr';
 
-export type SwitcherSelection = 'full' | 'grid' | 'admin';
+export type SwitcherSelection = 'full' | 'grid' | 'admin' | 'contact';
 
 const GAP_CLASS_RIGHT = 'mr-1.5 sm:mr-2';
 const GAP_CLASS_LEFT  = 'ml-0.5 sm:ml-1';
@@ -235,6 +237,15 @@ export default function AppViewSwitcher({
               keyCommandModifier: KEY_COMMANDS.search[0],
               keyCommand: KEY_COMMANDS.search[1],
             }}}
+            width="narrow"
+          />
+          <SwitcherItem
+            icon={<IconContact includeTitle={false} />}
+            href={PATH_CONTACT}
+            active={currentSelection === 'contact'}
+            tooltip={{
+              content: 'Contact',
+            }}
             width="narrow"
           />
         </Switcher>

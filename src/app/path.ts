@@ -13,6 +13,7 @@ export const PATH_FULL                  = '/full';
 export const PATH_ADMIN                 = '/admin';
 export const PATH_API                   = '/api';
 export const PATH_SIGN_IN               = '/sign-in';
+export const PATH_CONTACT               = '/contact';
 export const PATH_OG                    = '/og';
 
 // Core: inferred
@@ -243,6 +244,9 @@ export const ABSOLUTE_PATH_FEED_JSON =
 export const ABSOLUTE_PATH_RSS_XML =
   `${getBaseUrl()}${PATH_RSS_XML}`;
 
+export const ABSOLUTE_PATH_CONTACT =
+  `${getBaseUrl()}${PATH_CONTACT}`;
+
 export const ABSOLUTE_PATH_HOME_IMAGE =
   `${getBaseUrl()}/home-image`;
 
@@ -390,6 +394,9 @@ export const isPathTopLevel = (pathname?: string) =>
 
 export const isPathSignIn = (pathname?: string) =>
   checkPathPrefix(pathname, PATH_SIGN_IN);
+
+export const isPathContact = (pathname?: string) =>
+  checkPathPrefix(pathname, PATH_CONTACT);
 
 export const isPathAdmin = (pathname?: string) =>
   checkPathPrefix(pathname, PATH_ADMIN);

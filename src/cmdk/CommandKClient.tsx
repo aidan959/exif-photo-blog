@@ -20,6 +20,7 @@ import {
   PATH_ADMIN_RECIPES,
   PATH_ADMIN_TAGS,
   PATH_ADMIN_UPLOADS,
+  PATH_CONTACT,
   PATH_FULL_INFERRED,
   PATH_GRID_INFERRED,
   PATH_SIGN_IN,
@@ -572,9 +573,14 @@ export default function CommandKClient({
     path: PATH_GRID_INFERRED,
   };
 
+  const pageContact: CommandKItem = {
+    label: 'Contact',
+    path: PATH_CONTACT,
+  };
+
   const pageItems: CommandKItem[] = GRID_HOMEPAGE_ENABLED
-    ? [pageGrid, pageFull]
-    : [pageFull, pageGrid];
+    ? [pageGrid, pageFull, pageContact]
+    : [pageFull, pageGrid, pageContact];
 
   const sectionPages: CommandKSection = {
     heading: appText.cmdk.pages,

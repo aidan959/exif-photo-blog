@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { SHOW_REPO_LINK } from '@/app/config';
 import RepoLink from '../components/RepoLink';
 import { usePathname } from 'next/navigation';
-import { PATH_ADMIN_PHOTOS, isPathAdmin, isPathSignIn } from './path';
+import { PATH_ADMIN_PHOTOS, PATH_CONTACT, isPathAdmin, isPathSignIn } from './path';
 import SubmitButtonWithStatus from '@/components/SubmitButtonWithStatus';
 import { signOutAction } from '@/auth/actions';
 import AnimateItems from '@/components/AnimateItems';
@@ -60,11 +60,16 @@ export default function Footer() {
                   </>
                   : isCheckingAuth
                     ? <Spinner size={16} className="translate-y-[2px]" />
-                    : SHOW_REPO_LINK
-                      ? <RepoLink />
-                      : <Link href={PATH_ADMIN_PHOTOS}>
-                        {appText.nav.admin}
-                      </Link>}
+                    : <>
+                      <Link href={PATH_CONTACT}>
+                        Contact
+                      </Link>
+                      {SHOW_REPO_LINK
+                        ? <RepoLink />
+                        : <Link href={PATH_ADMIN_PHOTOS}>
+                          {appText.nav.admin}
+                        </Link>}
+                    </>}
               </div>
               <div className="flex items-center h-10">
                 <ThemeSwitcher />
