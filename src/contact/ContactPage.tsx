@@ -38,11 +38,11 @@ export default function ContactPage() {
                   'text-xl font-semibold mb-4',
                   'text-main',
                 )}>
-                  Let's Connect
+                  Let&apos;s Connect
                 </h2>
                 <div className="space-y-4 text-dim">
                   <p>
-                    I'm always looking to work with people on new projects, and increase the number of photos on this site.
+                    I&apos;m always looking to work with people on new projects, and increase the number of photos on this site.
                   </p>
                   <p>
                     You can contact me through any of the following channels:
