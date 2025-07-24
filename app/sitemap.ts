@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { getDataForCategoriesCached } from '@/category/cache';
 import {
   ABSOLUTE_PATH_CONTACT,
+  ABSOLUTE_PATH_MUSIC,
   ABSOLUTE_PATH_FULL,
   ABSOLUTE_PATH_GRID,
   absolutePathForCamera,
@@ -84,6 +85,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Contact
     {
       url: ABSOLUTE_PATH_CONTACT,
+      priority: PRIORITY_CATEGORY,
+      lastModified: lastModifiedSite,
+    },
+    // Music
+    {
+      url: ABSOLUTE_PATH_MUSIC,
       priority: PRIORITY_CATEGORY,
       lastModified: lastModifiedSite,
     },

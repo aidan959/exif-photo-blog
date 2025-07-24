@@ -11,6 +11,7 @@ import {
   isPathFull,
   isPathGrid,
   isPathContact,
+  isPathMusic,
   isPathProtected,
   isPathSignIn,
 } from '@/app/path';
@@ -68,6 +69,8 @@ export default function NavClient({
       return 'full';
     } else if (isPathContact(pathname)) {
       return 'contact';
+    } else if (isPathMusic(pathname)) {
+      return 'music';
     } else if (isPathProtected(pathname)) {
       return 'admin';
     }

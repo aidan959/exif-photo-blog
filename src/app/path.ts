@@ -14,6 +14,7 @@ export const PATH_ADMIN                 = '/admin';
 export const PATH_API                   = '/api';
 export const PATH_SIGN_IN               = '/sign-in';
 export const PATH_CONTACT               = '/contact';
+export const PATH_MUSIC                 = '/music';
 export const PATH_OG                    = '/og';
 
 // Core: inferred
@@ -41,6 +42,7 @@ export const PATH_FEED_JSON             = '/feed.json';
 
 // Path prefixes
 export const PREFIX_PHOTO               = '/p';
+export const PREFIX_MUSIC               = '/m';
 export const PREFIX_CAMERA              = '/shot-on';
 export const PREFIX_LENS                = '/lens';
 export const PREFIX_TAG                 = '/tag';
@@ -52,6 +54,7 @@ export const PREFIX_RECENTS             = '/recents';
 
 // Dynamic paths
 const PATH_PHOTO_DYNAMIC                = `${PREFIX_PHOTO}/[photoId]`;
+const PATH_MUSIC_DYNAMIC                = `${PREFIX_MUSIC}/[musicId]`;
 const PATH_CAMERA_DYNAMIC               = `${PREFIX_CAMERA}/[make]/[model]`;
 const PATH_LENS_DYNAMIC                 = `${PREFIX_LENS}/[make]/[model]`;
 const PATH_TAG_DYNAMIC                  = `${PREFIX_TAG}/[tag]`;
@@ -247,6 +250,9 @@ export const ABSOLUTE_PATH_RSS_XML =
 export const ABSOLUTE_PATH_CONTACT =
   `${getBaseUrl()}${PATH_CONTACT}`;
 
+export const ABSOLUTE_PATH_MUSIC =
+  `${getBaseUrl()}${PATH_MUSIC}`;
+
 export const ABSOLUTE_PATH_HOME_IMAGE =
   `${getBaseUrl()}/home-image`;
 
@@ -397,6 +403,9 @@ export const isPathSignIn = (pathname?: string) =>
 
 export const isPathContact = (pathname?: string) =>
   checkPathPrefix(pathname, PATH_CONTACT);
+
+export const isPathMusic = (pathname?: string) =>
+  checkPathPrefix(pathname, PATH_MUSIC);
 
 export const isPathAdmin = (pathname?: string) =>
   checkPathPrefix(pathname, PATH_ADMIN);

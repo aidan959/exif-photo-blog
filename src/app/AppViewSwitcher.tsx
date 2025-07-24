@@ -3,10 +3,12 @@ import SwitcherItem from '@/components/switcher/SwitcherItem';
 import IconFull from '@/components/icons/IconFull';
 import IconGrid from '@/components/icons/IconGrid';
 import IconContact from '@/components/icons/IconContact';
+import IconMusic from '@/components/icons/IconMusic';
 import {
   PATH_FULL_INFERRED,
   PATH_GRID_INFERRED,
   PATH_CONTACT,
+  PATH_MUSIC,
 } from '@/app/path';
 import IconSearch from '../components/icons/IconSearch';
 import { useAppState } from '@/app/AppState';
@@ -29,7 +31,7 @@ import { motion } from 'framer-motion';
 import SortMenu from '@/photo/sort/SortMenu';
 import { SWR_KEYS } from '@/swr';
 
-export type SwitcherSelection = 'full' | 'grid' | 'admin' | 'contact';
+export type SwitcherSelection = 'full' | 'grid' | 'admin' | 'contact' | 'music';
 
 const GAP_CLASS_RIGHT = 'mr-1.5 sm:mr-2';
 const GAP_CLASS_LEFT  = 'ml-0.5 sm:ml-1';
@@ -245,6 +247,15 @@ export default function AppViewSwitcher({
             active={currentSelection === 'contact'}
             tooltip={{
               content: 'Contact',
+            }}
+            width="narrow"
+          />
+          <SwitcherItem
+            icon={<IconMusic includeTitle={false} />}
+            href={PATH_MUSIC}
+            active={currentSelection === 'music'}
+            tooltip={{
+              content: 'Music',
             }}
             width="narrow"
           />
